@@ -66,7 +66,7 @@ app.use(errorHandler);
 
 // here database connection is established & server is started.
 mongoose
-  .connect(process.env.MONGO_CONNECTION)
+  .connect(process.env.MONGO_URI)
   .then(() => {
     app.listen(PORT, () => {
       console.log("Database connection Succesful");
