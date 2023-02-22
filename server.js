@@ -26,8 +26,8 @@ app.use(bodyParser.json());
 
 app.use(
   cors({
-    // origin: ["http://localhost:3000", "https://pinvent-app.vercel.app"],
-    origin: ["http://localhost:3000", "http://localhost:8000"],
+    origin: ["https://inventoryfront.onrender.com", "https://inventorybackendmanagmentapi.onrender.com"],
+    // origin: ["http://localhost:3000", "http://localhost:8000"],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
     allowedHeaders: ['Access-Control-Allow-Headers', 'Access-Control-Allow-Origin', 'Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
