@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const protect = asyncHandler(async (req, res, next) => {
   try {
     const token = req.cookies.token;
+    // console.log(token)
 
     if (!token) {
       res.status(401);
@@ -29,29 +30,3 @@ const protect = asyncHandler(async (req, res, next) => {
 });
 
 module.exports = protect;
-
-
-// cheack role based is authorized or not.
-const authorizeRoles = (...roles) => { 
-  // console.log("Roles : ", ...roles)
-
-  const rolesArray = [...roles];
-  try {
-      return (req, res, next) => { 
-          const userRole = req.user.role;
-          const result = rolesArray.map(role => userRole.includes(role)).find(item => item === true);
-          // console.log("Result: ", result)
-
-          if(!result) return res.status(401).json({
-              message: `${req.user.role} cann't authorized to access this route.`
-          })
-          next();
-      }
-      
-  } catch (error) {
-      res.status(404).json({error: error.message})
-  }
-}
-
-
-module.exports = authorizeRoles;

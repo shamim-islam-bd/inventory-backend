@@ -7,11 +7,8 @@ const crypto = require("crypto");
 const sendEmail = require("../utils/sendEmail");
 
 // Generate Token
-// const generateToken = (id, role) => {
-//   return jwt.sign({ id, role }, process.env.JWT_SECRET, { expiresIn: "7d" });
-// };
 const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRE_TIME });
+  return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "1d" });
 };
 
 // Register User
@@ -45,7 +42,6 @@ const registerUser = asyncHandler(async (req, res) => {
   });
 
   //   Generate Token
-  // const token = generateToken(user._id, user.role);
   const token = generateToken(user._id);
 
   // Send HTTP-only cookie
@@ -97,7 +93,6 @@ const loginUser = asyncHandler(async (req, res) => {
   const passwordIsCorrect = await bcrypt.compare(password, user.password);
 
   //   Generate Token
-  // const token = generateToken(user._id, user.role);
   const token = generateToken(user._id);
 
   // Send HTTP-only cookie

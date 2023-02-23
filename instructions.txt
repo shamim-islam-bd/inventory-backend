@@ -30,8 +30,3 @@ total stores + total users + total admins + total categories + total subcategori
  
 
 inspired by- https://minimarketalpha.herokuapp.com
-
-
-My local server is running on port 3000
-
-http://192.168.0.104:3000/login

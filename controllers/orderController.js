@@ -5,6 +5,10 @@ const cloudinary = require("cloudinary").v2;
 
 // Create Prouct
 const createOrder = asyncHandler(async (req, res) => {
+
+  // console.log("user frm bknd: ", req.user);
+  // console.log("Body: ", req.body);
+
   const { name, category, quantity, price } = req.body;
 
   //   Validation

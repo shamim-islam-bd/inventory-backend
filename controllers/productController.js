@@ -62,7 +62,6 @@ const getProducts = asyncHandler(async (req, res) => {
   res.status(200).json(products);
 });
 
-
 // Get single product
 const getProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
