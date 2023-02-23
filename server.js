@@ -26,7 +26,8 @@ app.use(bodyParser.json());
 
 app.use(
   cors({
-    origin: ["https://inventoryfront.onrender.com", "https://inventorybackendmanagmentapi.onrender.com"],
+    origin: ["https://inventorybackendmanagmentapi.onrender.com", "https://inventoryfront.onrender.com"],
+    // origin: ["https://inventoryfront.onrender.com", "https://inventorybackendmanagmentapi.onrender.com"],
     // origin: ["http://localhost:3000", "http://localhost:8000"],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
