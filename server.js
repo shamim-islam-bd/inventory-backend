@@ -26,18 +26,16 @@ app.use(bodyParser.json());
 
 app.use(
   cors({
-    origin: ["https://inventorybackendmanagmentapi.onrender.com", "https://inventoryfront.onrender.com"],
-    // origin: ["https://inventoryfront.onrender.com", "https://inventorybackendmanagmentapi.onrender.com"],
-    // origin: ["http://localhost:3000", "http://localhost:8000"],
+    origin: ["https://inventoryfront.onrender.com", "https://inventorybackendmanagmentapi.onrender.com"],
+    // origin: ["http://localhost:3001", "http://localhost:8001"],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
     allowedHeaders: ['Access-Control-Allow-Headers', 'Access-Control-Allow-Origin', 'Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
   })
 );
 
-
 app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+  res.header('Access-Control-Allow-Methods', 'GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS');
      next();
 });
 
